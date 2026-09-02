@@ -2781,6 +2781,45 @@ export default function App() {
   if (!data) {
     return (
       <div className="splash">
+        {/* Cortinas de Macramê */}
+        <div className="curtain-container">
+          <div className="curtain-left">
+            <div className="curtain-pattern" />
+            <div className="macrame-threads" />
+            <div className="macrame-knots" />
+            <div className="curtain-fringe">
+              {Array.from({ length: 40 }, (_, i) => (
+                <div
+                  key={i}
+                  className="fringe-thread"
+                  style={{
+                    left: `${(i / 39) * 100}%`,
+                    height: `${20 + Math.sin(i * 0.5) * 15}px`,
+                    animationDelay: `${i * 0.05}s`
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="curtain-right">
+            <div className="curtain-pattern" />
+            <div className="macrame-threads" />
+            <div className="macrame-knots" />
+            <div className="curtain-fringe">
+              {Array.from({ length: 40 }, (_, i) => (
+                <div
+                  key={i}
+                  className="fringe-thread"
+                  style={{
+                    left: `${(i / 39) * 100}%`,
+                    height: `${20 + Math.cos(i * 0.5) * 15}px`,
+                    animationDelay: `${i * 0.05 + 0.3}s`
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="splash-mark">F</div>
         <span>abrindo seu cofre local</span>
       </div>
